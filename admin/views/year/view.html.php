@@ -25,10 +25,10 @@ class PotterViewYear extends JViewLegacy
 	 **/
 	function display($tpl = null)
 	{
+        // Das Formular.
+        $this->form = $this->get('Form');
         // Die Daten werden bezogen.
         $this->item = $this->get('Item');
-         // Das Formular.
-        $this->form = $this->get('Form');
 
         /* Fehler abfangen, die beim Aufbau der View aufgetreten sind  */
         if (count($errors = $this->get('Errors'))) 

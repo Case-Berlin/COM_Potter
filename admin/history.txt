@@ -8,6 +8,7 @@
 - GitHub wieder in Betrieb genommen, nun gehts auch
 - noch einmal Check aber immer noch kein Erfolg
 - controller Änderung?
+- Änderung in der view (edit)
 
 07.04.2014 v.2.99.37 - 2.99.38
 - Fehlersuche ohne Ende ---> Vergleichen Quellcode mit com_content aus Joomla (untercontroller, models)
