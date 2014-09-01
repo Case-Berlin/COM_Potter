@@ -11,4 +11,17 @@ jimport('joomla.application.component.controllerform');
  */
 class PotterControllerYear extends JControllerForm
 {
+	public function save($key = null, $urlVar = null)
+	{
+		$return = parent::save($key, $urlVar);
+		$this->setRedirect('index.php?option=com_potter&view=years');
+		return $return;
+	}
+	public function cancel($key = null)
+	{
+		$return = parent::cancel($key);
+		$this->setRedirect('index.php?option=com_potter&view=years');
+		return $return;
+	}
+	
 }

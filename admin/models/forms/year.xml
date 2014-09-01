@@ -9,7 +9,7 @@
  
         <field 
 			name="Jahr" 
-			type="integer"
+			type="text"
             label="YEAR"
             description="YEAR"
             size="4" 
