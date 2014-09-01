@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="PROTAS">
+		<message>PROTAS_DEFAULT_DESC</message>
+	</layout>
+	<name>Protagonisten</name>
+	<description>Dieser Teil der Komponente zeigt alle Protagonisten eines Jahres</description>
+	<config><fields name="params"><fieldset name="basic">"
+		<field type="sql" name="idjahr" label="Jahre" description="aktuelles Potter Jahr" query="SELECT id AS value, Jahr AS idjahr FROM #__po_jahr" />
+		<field type="radio" name="filter" default="1" label="Filter" description="Anzeigen ob nur Sicher oder published verwendet wird">
+			<option value="0">SECURE_INT</option>
+			<option value="1">PUBLISH_EXT</option>
+		</field>
+		<field name="fuss" type="textarea" default="Die Liste wird bis zum Schuljahresbeginn noch wachsen." label="Was steht im Fuss" description="" rows="10" cols="25" />			
+		<field name="leer" type="textarea" default="Die Schulleitung ist derzeit beschaeftigt, naehere Informationen gibt es rechtzeitig vor dem Schuljahresbeginn!" label="Was kommt wenn Liste leer" description="" rows="10" cols="25" />			
+	</fieldset></fields></config>
+</metadata>

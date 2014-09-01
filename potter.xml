@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>Potter</name>
+	<!-- The following elements are optional and free of formatting conttraints -->
+	<creationDate>2013-04-07</creationDate>
+	<author>Steffen Janke</author>
+	<authorEmail>Steffen.Janke@gmail.com</authorEmail>
+	<authorUrl>http://www.derphoenixorden.de</authorUrl>
+	<copyright>Steffen Janke</copyright>
+	<license>meine eigene Lizenz</license>
+	<!--  The version string is recorded in the components table -->
+	<version>2.99.38</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_POTTER_DESC</description>
+
+<!--
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+-->
+	<!-- Site Main File Copy Section -->
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>potter.php</filename>
+		<filename>models/artistslong.php</filename>
+		<filename>models/artistss.php</filename>
+		<filename>models/birthday.php</filename>
+		<filename>models/houses.php</filename>
+		<filename>models/index.html</filename>
+		<filename>models/years.php</filename>
+		<filename>models/lessons.php</filename>
+		<filename>models/potter.php</filename>
+		<filename>models/protas.php</filename>
+		<filename>models/user.php</filename>
+		<filename>views/artistslong/index.html</filename>
+		<filename>views/artistslong/view.html.php</filename>
+		<filename>views/artistslong/tmpl/default.php</filename>
+		<filename>views/artistslong/tmpl/default.xml</filename>
+		<filename>views/artistslong/tmpl/index.html</filename>
+		<filename>views/artistss/index.html</filename>
+		<filename>views/artistss/view.html.php</filename>
+		<filename>views/artistss/tmpl/default.php</filename>
+		<filename>views/artistss/tmpl/default.xml</filename>
+		<filename>views/artistss/tmpl/index.html</filename>
+		<filename>views/birthday/index.html</filename>
+		<filename>views/birthday/view.html.php</filename>
+		<filename>views/birthday/tmpl/default.php</filename>
+		<filename>views/birthday/tmpl/default.xml</filename>
+		<filename>views/birthday/tmpl/index.html</filename>
+		<filename>views/houses/index.html</filename>
+		<filename>views/houses/view.html.php</filename>
+		<filename>views/houses/tmpl/default.php</filename>
+		<filename>views/houses/tmpl/default.xml</filename>
+		<filename>views/houses/tmpl/index.html</filename>
+		<filename>views/years/index.html</filename>
+		<filename>views/years/view.html.php</filename>
+		<filename>views/years/tmpl/default.php</filename>
+		<filename>views/years/tmpl/default.xml</filename>
+		<filename>views/years/tmpl/index.html</filename>
+		<filename>views/lessons/index.html</filename>
+		<filename>views/lessons/view.html.php</filename>
+		<filename>views/lessons/tmpl/default.php</filename>
+		<filename>views/lessons/tmpl/default.xml</filename>
+		<filename>views/lessons/tmpl/index.html</filename>
+		<filename>views/potter/index.html</filename>
+		<filename>views/potter/view.html.php</filename>
+		<filename>views/potter/tmpl/default.php</filename>
+		<filename>views/potter/tmpl/default.xml</filename>
+		<filename>views/potter/tmpl/index.html</filename>
+		<filename>views/protas/index.html</filename>
+		<filename>views/protas/view.html.php</filename>
+		<filename>views/protas/tmpl/default.php</filename>
+		<filename>views/protas/tmpl/default.xml</filename>
+		<filename>views/protas/tmpl/index.html</filename>
+		<filename>views/user/index.html</filename>
+		<filename>views/user/view.html.php</filename>
+		<filename>views/user/tmpl/default.php</filename>
+		<filename>views/user/tmpl/default.xml</filename>
+		<filename>views/user/tmpl/index.html</filename>
+		<filename>views/index.html</filename>
+		<filename>images/bossander.gif</filename>
+		<filename>images/gryffindor.gif</filename>
+		<filename>images/hogwarts.gif</filename>
+		<filename>images/hufflepuff.gif</filename>
+		<filename>images/index.html</filename>
+		<filename>images/ravenclaw.gif</filename>
+		<filename>images/slytherin.gif</filename>
+		<filename>images/zauberschloss.gif</filename>
+	</files>
+	<!-- Language -->
+	<languages folder="language">
+		<language tag="de-DE">de-DE/de-DE.com_potter.ini</language>
+		<language tag="de-DE">de-DE/de-DE.com_potter.sys.ini</language>
+	</languages>
+
+	<install>
+		<sql>
+			<file driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql">uninstall.sql</file> 
+		</sql>
+	</uninstall>	
+	<!-- Custom Install Script to execute -->
+	<installfile>install.potter.php</installfile>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>Potter</menu>
+		<submenu>
+			<menu link="option=com_potter&amp;view=years" view="years"   alt="years">Jahre</menu>
+			<menu link="option=com_potter&amp;view=artists" view="artists" alt="artists">Darsteller</menu>
+			<menu link="option=com_potter&amp;view=subjects" view="subjects" alt="subjects">Fachliste</menu>
+			<menu link="option=com_potter&amp;view=rolls" view="rolls"    alt="rolls">Rollen</menu>
+			<menu link="option=com_potter&amp;view=charakters" view="charakters" alt="charakters">Charaktere</menu>
+			<menu link="option=com_potter&amp;view=lessons" view="lessons" alt="lessons">Unterricht</menu>
+		</submenu>
+		
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Site Main File Copy Section -->
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>history.txt</filename>
+			<filename>index.html</filename>
+			<filename>install.sql</filename>
+			<filename>potter.php</filename>
+			<filename>todo.txt</filename>
+			<filename>uninstall.sql</filename>
+
+			<filename>controllers/artists.php</filename>
+			<filename>controllers/charakters.php</filename>
+			<filename>controllers/index.html</filename>
+			<filename>controllers/lessons.php</filename>
+			<filename>controllers/potterinstall.php</filename>
+			<filename>controllers/rolls.php</filename>
+			<filename>controllers/subjects.php</filename>
+
+			<filename>controllers/year.php</filename>
+			<filename>controllers/years.php</filename>
+
+
+			<filename>models/artist.php</filename>
+			<filename>models/artists.php</filename>
+			<filename>models/charakter.php</filename>
+			<filename>models/charakters.php</filename>
+			<filename>models/index.html</filename>
+			<filename>models/lesson.php</filename>
+			<filename>models/lessons.php</filename>
+			<filename>models/roll.php</filename>
+			<filename>models/rolls.php</filename>
+			<filename>models/subject.php</filename>
+			<filename>models/subjects.php</filename>
+
+			<filename>models/year.php</filename>
+			<filename>models/years.php</filename>
+
+			<filename>models/forms/index.html</filename>
+			<filename>models/forms/year.xml</filename>
+
+			<filename>models/fields/index.html</filename>
+			<filename>models/fields/years.php</filename>
+
+
+			<filename>tables/artist.php</filename>
+			<filename>tables/charakter.php</filename>
+			<filename>tables/index.html</filename>
+			<filename>tables/lesson.php</filename>
+			<filename>tables/roll.php</filename>
+			<filename>tables/subject.php</filename>
+
+			<filename>tables/years.php</filename>
+
+
+			<filename>views/artist/index.html</filename>
+			<filename>views/artist/view.html.php</filename>
+			<filename>views/artist/tmpl/form.php</filename>
+			<filename>views/artist/tmpl/index.html</filename>
+			<filename>views/artists/index.html</filename>
+			<filename>views/artists/view.html.php</filename>
+			<filename>views/artists/tmpl/default.php</filename>
+			<filename>views/artists/tmpl/index.html</filename>
+			<filename>views/charakter/index.html</filename>
+			<filename>views/charakter/view.html.php</filename>
+			<filename>views/charakter/tmpl/form.php</filename>
+			<filename>views/charakter/tmpl/index.html</filename>
+			<filename>views/charakters/index.html</filename>
+			<filename>views/charakters/view.html.php</filename>
+			<filename>views/charakters/tmpl/default.php</filename>
+			<filename>views/charakters/tmpl/index.html</filename>
+			<filename>views/lesson/index.html</filename>
+			<filename>views/lesson/view.html.php</filename>
+			<filename>views/lesson/tmpl/form.php</filename>
+			<filename>views/lesson/tmpl/index.html</filename>
+			<filename>views/lessons/index.html</filename>
+			<filename>views/lessons/view.html.php</filename>
+			<filename>views/lessons/tmpl/default.php</filename>
+			<filename>views/lessons/tmpl/index.html</filename>
+			<filename>views/potter/index.html</filename>
+			<filename>views/potter/view.html.php</filename>
+			<filename>views/potter/tmpl/default.php</filename>
+			<filename>views/potter/tmpl/index.html</filename>
+			<filename>views/roll/index.html</filename>
+			<filename>views/roll/view.html.php</filename>
+			<filename>views/roll/tmpl/form.php</filename>
+			<filename>views/roll/tmpl/index.html</filename>
+			<filename>views/rolls/index.html</filename>
+			<filename>views/rolls/view.html.php</filename>
+			<filename>views/rolls/tmpl/default.php</filename>
+			<filename>views/rolls/tmpl/index.html</filename>
+			<filename>views/subject/index.html</filename>
+			<filename>views/subject/view.html.php</filename>
+			<filename>views/subject/tmpl/form.php</filename>
+			<filename>views/subject/tmpl/index.html</filename>
+			<filename>views/subjects/index.html</filename>
+			<filename>views/subjects/view.html.php</filename>
+			<filename>views/subjects/tmpl/default.php</filename>
+			<filename>views/subjects/tmpl/index.html</filename>
+
+			<filename>views/year/index.html</filename>
+			<filename>views/year/view.html.php</filename>
+			<filename>views/year/tmpl/edit.php</filename>
+			<filename>views/year/tmpl/index.html</filename>
+			<filename>views/years/index.html</filename>
+			<filename>views/years/view.html.php</filename>
+			<filename>views/years/tmpl/default.php</filename>
+			<filename>views/years/tmpl/default_head.php</filename>
+			<filename>views/years/tmpl/default_body.php</filename>
+			<filename>views/years/tmpl/default_foot.php</filename>
+			<filename>views/years/tmpl/index.html</filename>
+			<filename>views/index.html</filename>
+
+		</files>		
+	<!-- Language -->
+	<languages folder="language">
+		<language tag="de-DE">de-DE/de-DE.com_potter.ini</language>
+		<language tag="de-DE">de-DE/de-DE.com_potter.sys.ini</language>
+	</languages>
+	</administration>
+</extension>

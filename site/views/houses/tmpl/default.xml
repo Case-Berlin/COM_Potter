@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="HAEUSER">
+		<message>HAEUSER_DEFAULT_DESC</message>
+	</layout>
+	<name>Haeuser</name>
+	<description>Dieser Teil der Komponente zeigt alle Haeuser eines Jahres</description>
+	<config><fields name="params"><fieldset name="basic">"
+		<field type="sql" name="idjahr" label="Jahre" description="aktuelles Potter Jahr" query="SELECT id AS value, Jahr AS idjahr FROM #__po_jahr" />
+		<field type="radio" name="filter" default="1" label="Filter" description="Anzeigen ob nur Sicher oder published verwendet wird">
+			<option value="0">SECURE_INT</option>
+			<option value="1">PUBLISH_EXT</option>
+		</field>
+		<field type="text" name="gry" label="Gryffindor" description="Gemeinschaftsraum Gryffindor" default="202" />
+		<field type="text" name="huf" label="Hufflepuff" description="Gemeinschaftsraum Hufflepuff" default="354" />
+		<field type="text" name="bos" label="Bossander" description="Gemeinschaftsraum Bossander" default="" />
+		<field type="text" name="rav" label="Ravenclaw" description="Gemeinschaftsraum Ravenclaw" default="304" />
+		<field type="text" name="sly" label="Slytherin" description="Gemeinschaftsraum Slytherin" default="104" />
+	</fieldset></fields></config>
+</metadata>

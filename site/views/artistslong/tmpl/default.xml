@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="ARTISTSLONG">
+		<message>ARTISTSLONG_DEFAULT_DESC</message>
+	</layout>
+	<name>Potter Darsteller Lang</name>
+	<description>Dieser Teil der Komponente zeigt alle Potter Darsteller (lang) an</description>
+</metadata>

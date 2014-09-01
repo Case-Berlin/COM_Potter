@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="ARTISTSS">
+		<message>ARTISTSS_DEFAULT_DESC</message>
+	</layout>
+	<name>Potter Darsteller kurz</name>
+	<description>Dieser Teil der Komponente zeigt alle Potter Darsteller (kurz) an</description>
+</metadata>

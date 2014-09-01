@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="BIRTHDAYS">
+		<message>BIRTHDAYS_DEFAULT_DESC</message>
+	</layout>
+	<name>Potter Darsteller kurz</name>
+	<description>Dieser Teil der Komponente zeigt die Geburtstage der Darsteller an</description>
+</metadata>

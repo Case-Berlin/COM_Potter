@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="USER">
+		<message>USER_DEFAULT_DESC</message>
+	</layout>
+	<name>Homepage User</name>
+	<description>Dieser Teil der Komponente zeigt alle Homepage User an</description>
+</metadata>

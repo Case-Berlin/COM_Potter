@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="PJAHRE">
+		<message>PJAHRE_DEFAULT_DESC</message>
+	</layout>
+	<name>Potter Jahre</name>
+	<description>Dieser Teil der Komponente zeigt alle Potter Jahre an</description>
+	<config><fields name="params"><fieldset name="basic">"
+		<field type="sql" name="idjahr" label="Jahre" description="aktuelles Potter Jahr" query="SELECT id AS value, Jahr AS idjahr FROM #__po_jahr" />
+		<field type="text" name="text1" label="irgendwas" description="mhh" default="default value" />
+		<field type="radio" name="filter" default="1" label="Filter" description="Anzeigen ob nur Sicher oder published verwendet wird">
+			<option value="0">Sicher (intern)</option>
+			<option value="1">Published (extern)</option>
+		</field>
+	</fieldset></fields></config>
+	<config><fields name="params"><fieldset name="advanced">"
+		<field type="text" name="text_field" label="bla" description="blupp" default="default value" />
+	</fieldset></fields></config>
+
+    <fields name="request"
+            addfieldpath="/administrator/components/com_potter/models/fields">
+
+        <fieldset name="request">
+            <field name="id"
+                   type="PotterYears"
+                   label="COM_POTTER_FIELD_YEAR"
+                   description="COM_POTTER_FIELD_YEAR_DESC">
+            </field>
+        </fieldset>
+ 
+    </fields>
+</metadata>

@@ -1,0 +1,149 @@
+J3.x Anpassungen
+- JFolder, JFile?? Import!?
+
+-ok- .DS. gegen .DIRECTORY_SEPARATOR.
+-ok- JModel -> JModellLegacy
+-ok- JView -> JViewLegacy
+-ok- JController -> JControllerLegacy
+
+??
+			<filename>sql/index.html</filename>
+			<filename>sql/updates/index.html</filename>
+			<filename>sql/updates/mysql/index.html</filename>
+			<filename>sql/updates/mysql/1.0.0.sql</filename>
+??
+
+J1.6 Anpassungen
+- artist
+- charakter
+- potter
+- roll
+- subject
+- year
+---------
+defined( '_JEXEC' ) or die;
+$option = JRequest::getCMD('option'); 
+ 
+id="adminForm"
+ 
+$mainframe = JFactory::getApplication();
+$context = JRequest::getCMD('context');
+<input type="hidden" name="context" value="com_potter" />
+		$query = 'SELECT j.Jahr AS text, j.id AS value'
+		. ' FROM #__po_jahr AS j'
+		. ' ORDER BY j.Jahr DESC';
+ 
+ 
+- Umstellung auch medien Pfad
+- Eigenen Pfad für jeden User (ID)
+ 
+Views im Frontend
+Offen für alle:
+- Protagonisten										fertig
+-- da fehlt noch eine Filtermöglichkeit
+-- persönliche Seite der Darsteller
+   (ist im Prinzip das Profil, nur als Extra Popup)
+- Hogwarts (Die Häuser)								fertig
+- Fächer											fertig
+-- Hier eine Sortierung
+-- Und ohne Lehrer
+
+Auf der Benutzerseite:
+- persönliches Profil Darsteller (Darstellung)		fertig
+- Geburtstagsliste									fertig
+- Darstellerliste mit Telefon, E-Mail				fertig
+-- Hier dann nochmal die Profilpopup einbauen..
+- Darstellerliste mit allen Infos					fertig
+- Userliste der Homepage							fertig
+- Liste Darsteller - aktuelle Rolle
+
+- Mailing
+
+- Eigenes Profil mit Änderung von:
+-- persönliches Profil Darsteller
+-- Rollen Infos
+-- bei Lehrern die Fachinfos
+
+Views im Backend
+- Years: Jahre				 								fertig
+- Artists: Darsteller										fertig
+-- Ein paar mehr Filter und Suchfenster                     fertig
+- Subjects: Fächer											fertig
+-- Suchfenster												fertig
+-- published einarbeiten									fertig
+- Rolls: Rollen												fertig
+-- Ein paar mehr Filter und Suchfenster						fertig
+
+- Charakters: Zuordnung Darsteller/Rollen/Jahr mit Infos 	in Arbeit
+-- Filter													fertig
+-- Editieren												fertig
+-- neuen Darsteller anlegen									fertig
+-- Rollennamen im Edit Fenster noch eingeben!!!				fertig
+-- Std bei neu nicht aktiv!									fertig
+-- Vorschau funktioniert nicht								fertig (zumindest online)
+-- altes Profil kopieren (auch im Batchbetrieb)				fertig
+
+-- Das Haus und die Magie hier auch noch anzeigen
+-- Sicher Flag umsetzen
+-- Funktion Sicher auf published setzen
+-- Löschen
+
+- Zuordnung Rolle/Fach/Jahr 								fertig
+  -- Unterricht noch mal groß darstellen					fertig
+  -- löschen Fächer evtl. (dran denken die Verknüpfungsdb!
+  -- Anwenden Button (speichern ohne schließen)
+
+models charakter aktuelles Jahr aus tabelle
+
+<div style="background-color: #75FF75; width:20; float:left">1</div>
+<div style="background-color:#00FF66; width:40; float:left">2</div>
+<div style="background-color:#00FF66; width:40; float:left">3</div>
+<div style="clear: both;"></div>
+<div style="background-color: #93FF93; width:20; float:left">t</div><div style="background-color:#00FF66; width:40">f</div>
+
+<div style="width: 50px; height: 100px; float: left;">
+Div 1
+</div>
+<div style="width: 50px; height: 100px; float: left;">
+Div 2
+</div>
+<div style="width: 50px; height: 100px; float: left;">
+Div 3
+</div>
+<div style="clear: both;"></div>
+<div style="width: 50px; height: 100px; float: left;">
+Div 1
+</div>
+<div style="width: 50px; height: 100px; float: left;">
+Div 2
+</div>
+<div style="width: 50px; height: 100px; float: left;">
+Div 3
+</div>
+<div style="clear: both;"></div>
+Kopf: #DFDFDF
+Liste: #DFDFDF, #D6D6D6
+
+Verschiedene Templates:
+-----------------------
+Du hast also einen Controller, ein Modul, ein View und zwei Templates (default.php und default_form.php), ja?
+Dieser Bearbeten-Link enthält ganz einfach die gleiche URL wie Deine Ansicht und zusätzlich noch den Anhang "&tpl=form".
+In die zugehörige view.html.php fügst Du dann in die function display{} ganz oben und ganz unten noch etwas ein:
+PHP-Code:
+function display($tpl = null)
+{
+if (!$tpl_name = JRequest::getCmd('tpl'))
+{
+$tpl_name = $tpl;
+}
+else $tpl_name = JRequest::getCmd('tpl');
+//
+// Restlicher, bestehender Inhalt von function display{}
+//
+parent::display($tpl_name);
+}
+Wenn immer ein Templateziel per POST übergeben wird würde im oberen Bereich auch
+PHP-Code:
+$tpl_name = JRequest::getCmd('tpl');
+ausreichen. Mit der if-Abfrage wird anderenfalls wieder der Standardwert eingesetzt.
+

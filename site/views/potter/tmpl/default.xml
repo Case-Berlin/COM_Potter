@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="PROFIL_VIEW">
+		<message>PROFIL_VIEW_DEFAULT_DESC</message>
+	</layout>
+	<name>Profil des Darstellers</name>
+	<description>Das Profil vom aktuellen Darsteller</description>
+<!--
+	<url>
+		<param type="sql" name="id" label="Jahre" description="aktuelles Potter Jahr" query="SELECT id AS value, Jahr AS id FROM #__po_jahr" />
+	</url>
+	<params>
+		<param type="text" name="text_field" label="irgendwas" description="mhh" default="default value" />
+	</params>
+	<advanced>
+		<param type="text" name="text_field" label="bla" description="blupp" default="default value" />
+	</advanced>
+-->
+</metadata>

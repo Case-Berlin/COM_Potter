@@ -1,0 +1,300 @@
+﻿/**
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage	Backend
+ * @author		Steffen Janke 
+ * @license		GNU/GPL
+ */
+07.04.2014 v.2.99.37 - 2.99.38
+- Fehlersuche ohne Ende ---> Vergleichen Quellcode mit com_content aus Joomla (untercontroller, models)
+
+03.04.2014 v.2.99.31 - 2.99.36
+- Backend potter.php umgestellt, vermutlich falsche Controller Init, mal sehen
+- Fehlersuche ohne Ende ---> Vergleichen Quellcode mit com_content aus Joomla (stand maincontroller, untercontroller,...)
+
+26.03.2014 v.2.99.30
+- $this->escape() in Textausgaben eingebaut
+- (int) vor Zahlen
+- tables Umbenennen!!!! MEHRZAHL!!! im Namen und in der Class
+- tables: 	function __construct($db) 
+- tables: Variablen nur public
+- model/forms hier werden nun die Default Werte übergeben!
+- Achtung bei model year!
+- admin/controller im moment nur auf years eingestellt, --> ANPASSEN wenn es geht!!!
+
+25.03.2014 v.2.99.27 - 2.99.29
+- neu: <?php echo JHtml::_('grid.checkall'); ?> (Als Checkup im Kopf)
+
+24.03.2014 v.2.99.05 - 2.99.26
+- SQL Schema eingebaut (und wieder aus, geht irgendwie nicht)
+- JModel, JController, JView -> mit Legacy erweitert
+- .DS. wo noch vorhanden ausgetauscht
+- site Views laufen wieder
+- site Anpassungen: default.xml auf utf-8 und einige Texte in LANGUAGE verschoben
+- Backend mit der View years angefangen
+
+21.03.2014 v.2.99.00
+- Anfang der Anpassungen an Joomla 3.x weil nix mehr geht..
+
+13.03.2011 v.1.05.00
+- alle BE: controllers
+- alle BE: models
+- alle BE: tables
+- BE Views: Year, Artist, Charakter,Potter,roll,subject
++ Filter bei Charakters & Rolls & Subject drin :)
++ Fach aktivieren möglich
++ Bei der Einrichtung des Unterrichts werden nur noch aktive Fächer angezeigt
+- alle Frontend Seite bearbeitet
+
+06.03.2011 v.1.02.00
+- Anfang Erweiterung und Kompatible machen für J1.6
+  - lesson (Alter und Anzahl eingebaut)
+  
+17.05.2009 v.1.01.02
+- charakters werden auch die Häuser angezeigt, diese sind hier ausgelagert in jos_po_haus
+
+17.05.2009 v.1.01.01
+- zusätzliche Sonderfunktionen eingebaut (Auslagerung in jos_po_sonder)
+
+25.12.2008 v.1.00.01 (eingespielt)
+- kleiner Bug in der Anzeige
+
+25.12.2008 v.1.00.00 (eingespielt)
+- fertig die View Häuser
+
+21.12.2008 v.0.09.00
+- Anfang der Häuser View
+
+21.12.2008 v.0.08.03 (eingespielt)
+- Grummel, MySQL 4.0 kann ja kein in (select.. Änderung
+
+21.12.2008 v.0.08.01/.02 (eingespielt)
+- Lessons View fertig
+- kleine Ändererung
+
+21.12.2008 v.0.08.00
+- weiter in der View
+
+15.12.2008 v.0.08.00
+- Anfang der Frontend View Fächer
+
+02.11.2008 v.0.07.03 (eingespielt)
+- View Lesson vorerst fertig
+
+01.11.2008 v.0.07.02 (eingespielt)
+- View Lesson fertig (ändern) nun fehlt nur noch das Zuordnen der Lehrer
+
+01.11.2008 v.0.07.01
+- kleine Änderungen an der View Lessons
+- Anfang der View Lesson
+
+01.11.2008 v.0.07.00
+- Bugfix Anzeige der Voschaubilder Charakter & Artist
+- Anfang der Backendview Lessons
+
+29.10.2008
+- Überschrift in der View drin
+- SQL Abfrage beschleunigt, da eine Tabelle weniger
+
+28.10.2008 v.0.06.01 (eingespielt)
+- Seite nun auch backend zu sehen, wenn man nicht eingeloggt ist, wenn entsprechender Schalter gesetzt ist
+
+27.10.2008
+- Ausgabe vervollständigt
+---nun fehlt nur das popupfenster für die Darstellerinfo
+
+26.10.2008 
+- online die Feinarbeiten
+
+26.10.2008 v.0.06.00
+- Parametertest und Einbau aktuelles Jahr in Jahreview
+- Fehler in View kurz beseitigt (Bilder)
+- Anfang der View protas (Darstellung der Protagonisten (intern und extern)
+ 
+26.10.2008 v.0.05.05 (eingespielt)
+- Copy Charakter aus einem Jahr in das aktuelle Jahr
+- bei neuem Charakter wird nun das akutelle Jahr ausgewählt
+- neue Charaktere sind nicht sofort published (zu sehen)
+- sicher wird erstmal angezeigt
+
+24.10.2008
+- Bugfix Javascript Bilder sofort darstellen braucht doch ein / davor
+
+22.10.2008 v.0.05.04 (eingespielt)
+- ändern der Rolle möglich, somit kann man nun die alten Rollen ändern und komplett neue anlegen
+
+18.10.2008 v.0.05.03
+- View Charakter (ändern Rolle)
+- Änderungen dann wieder online, Dateien dann zurück
+
+15.10.2008 v.0.05.02
+- alle Filter und search eingebaut
+
+11.10.2008 v.0.05.01
+- / bei den images  Pfaden raus, wegen der Kompatibilität
+- showEmail wird un Userliste angezeigt, JText bei Usergruppe
+- weiter mit Charakters Übersicht (model und View) 
+!!!! Edit nur online, diese Dateien danach hier einspielen!!!! 
+
+05.10.2008 v.0.05.00
+- Charakter angefangen (alle Modelle, Controller & Tables
+- kleiner Bug in der Rolls View behoben
+- Charakter View angefangen (erstmal quick & dirty) dann mal sehen wie man das verfeinern kann
+
+05.10.2008 v.0.04.05/.06
+- Fehler beim Wechseln zwischen den Views
+  $option gegen $context getauscht und diese in den views & models bestückt
+
+05.10.2008 v.0.04.04 (eingespielt)
+- minimale Anpassungen
+
+05.10.2008 v.0.04.02/.03 
+- kleine Bugfixes
+- View Roll (Rolle editieren)
+
+05.10.2008 v.0.04.00/01
+- Fehler in der Aufgabenliste bemerkt, da fehlten die Charaktere
+- Anfang View Rolls (Liste der Rollen)
+
+05.10.2008 v.0.03.02 (eingespielt)
+- weitere Bugfixes
+- View Subject (Editieren der Fächer)
+
+05.10.2008 v.0.03.01
+- Bugfixes in Artists
+- div. andere Bugfixes
+
+05.10.2008 v.0.03.00
+- Controller zeigt nun die View an, die aktuell ist
+- Sortierung in der Darsteller View schon von Anfang an richtig
+- Anfang der Fächer (Subjects) subjects
+- Bugfixes in Artists
+
+04.10.2008 v.0.02.08/.09 (eingespielt)
+- Userliste und Zuordnung zu den Darstellern
+
+04.10.2008 v.0.02.07 (eingespielt)
+- Darstellerliste kurz, nun mal mit DIVs
+
+04.10.2008 v.0.02.04/.05/.06 (eingespielt)
+- Darstellerliste lang, nun mal mit DIVs
+
+03.10.2008 v.0.02.03 (eingespielt)
+- Geburtstagsliste
+
+03.10.2008 v.0.02.02 (eingespielt)
+- Darsteller Profil View Potter erstellt
+- artist model noch einmal bearbeitet, da der Editor keine Steuerzeichen gespeichert hat
+
+03.10.2008 v.0.02.01
+- Sortierung bei Darstellern noch einmal geändert
+- Anfang des Installers (Upgrade klappt, Daten sind ja schon drin, daher egal
+
+26.09.2008 v.0.01.20 = 0.02.00 (wird eingespielt auf der richtigen Seite
+- Umstellung auf Schalter und Listen
+
+26.09.2008 v.0.01.18/.19
+- Versuch einiger Parameter (Bild und Editor)
+
+26.09.2008 v.0.01.17
+- View Artist erste Version noch nicht hübsch, aber zum Testen
+
+26.09.2008 v.0.01.14/.15/.16
+- Filter erstmal sein lassen, ich muss weiter kommen
+- Editieren angefangen, Published / unPublished --> ok
+
+21.09.2008 v.0.01.13
+- Anfang von Filtern in der View
+
+21.09.2008 v.0.01.11/.12
+- Sortieren der Liste
+
+21.09.2008 v.0.01.08/.09/.10
+- Blätterbutton im Fuß fehlten, mal sehen ob ich sie nun habe --> nun gehts
+
+21.09.2008 v.0.01.07
+- Seiteweise Ausgabe in der View Artist eingebaut
+
+20.09.2008 v.0.01.06
+- Erweiterung der View artists
+
+20.09.2008 v.0.01.05
+- Einbau eines Test Default.xml Files im fe.jahre.view
+
+13.09.2008 v.0.01.03
+- Einbau der View auf Artists (Darsteller) Anfang noch ohne Auswahlboxen im Header, das muss ich erst suchen
+
+13.09.2008 v.0.01.02
+- kleine Textänderungen (Auslagerung in Sprachfile)
+
+13.09.2008 v.0.01.01
+- kleine Textänderungen
+
+13.09.2008 v.0.1.00
+- jede Menge dummer Fehler noch raus
+- aktivieren des Jahre komplett
+- somit erstes Build fertig, da Jahres Verwaltung geht
+s 
+13.09.2008 v.0.0.26
+- Sprachfile wurde im Backend nicht erkannt
+- error in einem View
+
+13.09.2008 v.0.0.25
+- Bugfix in Anzeige und Ort der Sprachdatei
+- Anfang der Aktivierung
+
+13.09.2008 v.0.0.24
+- das aktuelle Jahr wird versteckt im Formuar gespeichern, nicht dass es da Probleme gibt
+- Sprachfile eingebaut
+- aktuelle Jahr wird mit Stern gekennzeichnet
+
+13.09.2008 v.0.0.23
+- Bezeichnung noch einmal geändert (JTEXT)
+- aua, year/tmpl/form.php 
+- Anfang von Standard Jahr wählen
+
+13.09.2008 v.0.0.22
+- makedefault braucht wohl doch besser Parameter
+
+13.09.2008 v.0.0.21
+- und weiter auf der Fehlersuche bei den Jahren
+- jede Menge Fehler gefunden, hoffentlich passt es nun
+
+11.09.2008 v.0.0.20
+- auf der Suche nach Fehlern
+
+11.09.2008 v.0.0.19
+- Hello ganz raus
+- potterview eingebaut, aber nur temp Inhalt (Jahre) muss, wenn es geht noch bearbeitet werden
+
+11.09.2008 v.0.0.18
+- Tests bei Benennungen...
+
+11.09.2008 v.0.0.17
+- Rekonstruktion von gestern
+- umbennen der Controller
+- #__po_jahr ein Feld aktuell eingebaut, für das aktuelle Jahr
+
+10.09.2008 v.0.0.16
+- Anfang BE View Jahre
+
+08.09.2008 v.0.0.15
+- noch mal Daten Änderungen Pfade aus den Datentabellen raus und in Jahre rein
+
+08.09.2008 v.0.0.14
+- Änderung Datenmodell Umstellung von activ auf published und teilweise hits, checked_out checked_out_time
+
+06.09.2008 v.0.0.13
+- das hat geklappt, nun mal ne Ausgabe, dass man nicht angemeldet ist.
+
+06.09.2008 v.0.0.12
+- mal wa mit getUser in der View Potter probieren (das wird auch die Seite für die pers. Seite)
+06.09.2008 v.0.0.11
+- erster Versuch eines zweiten Views im Frontend (Jahre), geklappt
+06.09.2008 v.0.0.10
+- naja wenigstens die Umlaute sind ok
+06.09.2008 v.0.0.09
+- das erste Mal gehts, aber wie, bärgs
+06.09.2008 v.0.0.08
+- Jahres View Frontend
+04.09.2008 v0.06 
+- Komplettes Datenmodell mit der ersten Joomla Änderung inkl. der alten Daten
