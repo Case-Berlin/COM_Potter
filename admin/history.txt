@@ -4,7 +4,7 @@
  * @author		Steffen Janke 
  * @license		GNU/GPL
  */
-01.09.2014 v.2.99.40 - 2.99.48
+01.09.2014 v.2.99.40 - 2.99.49
 - GitHub wieder in Betrieb genommen, nun gehts auch
 - noch einmal Check aber immer noch kein Erfolg
 - controller Änderung?
@@ -12,6 +12,7 @@
 - nach dem die Änderungen nun endlich gespeichert wurden, ging auch die View, Hurra!
 ! nur speichern etc geht nix, nun also nächste Fehlersuche
 - save und cancel in controller years implementiert (fehlen aber noch apply, save2copy, save2new)
+- Änderungen im Edit Formular 
 
 07.04.2014 v.2.99.37 - 2.99.38
 - Fehlersuche ohne Ende ---> Vergleichen Quellcode mit com_content aus Joomla (untercontroller, models)

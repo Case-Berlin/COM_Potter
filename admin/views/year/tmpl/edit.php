@@ -11,9 +11,11 @@ JHtml::_('behavior.keepalive');
 // Der Link für das Formular
 //$actionLink = JRoute::_('index.php?option=com_potter&view=year&layout=edit&id=' . (int) $this->item->id);
 $actionLink = JRoute::_('index.php?option=com_potter&layout=year.edit&id=' . (int) $this->item->id);
+
+//<form action="<?php echo $actionLink; ?>" method="post" name="adminForm" id="item-form">
  
 ?>
-<form action="<?php echo $actionLink; ?>" method="post" name="adminForm" id="item-form">
+<form method="post" name="adminForm" id="adminForm">
     <fieldset class="adminform">
         <legend><?php echo JText::_('Details'); ?></legend>
  
@@ -22,10 +24,6 @@ $actionLink = JRoute::_('index.php?option=com_potter&layout=year.edit&id=' . (in
             echo $field->input; ?>
         <?php endforeach; ?>
     </fieldset>
-    <div>
-        <input type="hidden" name="task" value="year.edit"/>
-        <?php echo JHtml::_('form.token'); ?>
-    </div>
-<input type="hidden" name="task" value="" />
-<?php echo JHtml::_('form.token'); ?>
+	<input type="hidden" name="task" value="year.edit" />
+	<?php echo JHtml::_('form.token'); ?>
 </form>
