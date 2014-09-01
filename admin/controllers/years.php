@@ -6,7 +6,6 @@
  * @subpackage Components
  */
  
-// Den direkten Aufruf verbieten
 defined('_JEXEC') or die;
  
 // Die Joomla! JControllerAdmin Klasse importieren
@@ -17,7 +16,7 @@ jimport('joomla.application.component.controlleradmin');
  */
 class PotterControllerYears extends JControllerAdmin
 {
-    public function getModel($name = 'year', $prefix = 'YearsModel', $config = array('ignore_request' => true))
+    public function getModel($name = 'year', $prefix = 'PotterModel', $config = array('ignore_request' => true))
     {
         return parent::getModel($name, $prefix, $config);
     }

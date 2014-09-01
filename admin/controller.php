@@ -92,10 +92,13 @@ class PotterController extends JControllerLegacy
 	public function display($cachable = false, $urlparams = false)
 	{
 		//JRequest::setVar('view', JRequest::getCmd('view', 'Potter'));
-		$input	= JFactory::getApplication()->input;
+		/*$input	= JFactory::getApplication()->input;
 		$view	= $input->get('view',$this->default_view);
 		$layout	= $input->get('layout','default');
-		$id		= $input->getInt('id');
+		$id		= $input->getInt('id');*/
+		$view	= $this->input->get('view',$this->default_view);
+		$layout	= $this->input->get('layout','default');
+		$id		= $this->input->getInt('id');
 		if ($view == 'year' && $layout == 'edit')
 		{
 			if (!$this->checkEditId('com_potter.edit.year', $id) )
@@ -104,7 +107,8 @@ class PotterController extends JControllerLegacy
 				return false;
 			}
 		}
-		parent::display($cachable, $urlparams);
+//		parent::display($cachable, $urlparams);
+		parent::display();
 		
 		return $this;
 	}

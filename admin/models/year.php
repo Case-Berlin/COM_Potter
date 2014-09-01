@@ -49,5 +49,3 @@ class PotterModelYear extends JModelAdmin
          return $data;
     }
 }
-
-?>
