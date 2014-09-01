@@ -52,7 +52,7 @@ class PotterViewYear extends JViewLegacy
         JToolBarHelper::title(
             $isNew
             ? JText::_('NEW_POTTER_YEAR')
-            : JText::_(JText::_( 'year' ).': '.$this->item->Jahr . JText::_( '[ EDIT ]') )
+            : JText::_( 'year' ).': '.$this->item->Jahr .'[ '.JText::_( 'EDIT').' ]'
         );
  
 		JToolBarHelper::apply('year.apply', 'JTOOLBAR_APPLY'); // Save

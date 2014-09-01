@@ -17,4 +17,29 @@ class PotterControllerYears extends JControllerAdmin
     {
         return parent::getModel($name, $prefix, $config);
     }
+
+	function delete()
+	{
+		$logger = getLogger();
+		$input =  JFactory::getApplication()->input;
+		$ids = $input->post->get('cid', array(), 'array');
+		JArrayHelper::toInteger($ids);
+		$model = $this->getModel('years');
+		$msg = $model->remove($ids, $logger);
+		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg ,'notice');
+	}
+	function activYear()
+	{
+		$model = $this->getModel('years');
+		if(!$model->activ()) 
+		{
+			$msg = JText::_( 'erroractivatedyear' );
+		} else 
+		{
+			$msg = JText::_( 'yearactivated' );
+		}
+		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg );
+	}
+
 }
+
