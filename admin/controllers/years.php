@@ -11,12 +11,9 @@ defined('_JEXEC') or die;
 // Die Joomla! JControllerAdmin Klasse importieren
 jimport('joomla.application.component.controlleradmin');
  
-/**
- * HalloWeltList Controller
- */
 class PotterControllerYears extends JControllerAdmin
 {
-    public function getModel($name = 'year', $prefix = 'PotterModel', $config = array('ignore_request' => true))
+    public function getModel($name = 'years', $prefix = 'PotterModel', $config = array('ignore_request' => true))
     {
         return parent::getModel($name, $prefix, $config);
     }
