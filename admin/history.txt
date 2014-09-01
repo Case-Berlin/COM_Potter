@@ -4,7 +4,7 @@
  * @author		Steffen Janke 
  * @license		GNU/GPL
  */
-01.09.2014 v.2.99.40 - 2.99.42
+01.09.2014 v.2.99.40 - 2.99.47
 - GitHub wieder in Betrieb genommen, nun gehts auch
 - noch einmal Check aber immer noch kein Erfolg
 - controller Änderung?

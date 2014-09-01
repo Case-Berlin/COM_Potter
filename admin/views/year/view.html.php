@@ -16,9 +16,9 @@ jimport('joomla.utilities.utility');
  */
 class PotterViewYear extends JViewLegacy
 {
-    protected $item; // Daten
-    protected $form; // Formular
-	protected $state;
+    //protected $item; // Daten
+    //protected $form; // Formular
+	//protected $state;
 	/**
 	 * display method of Year view
 	 * @return void
