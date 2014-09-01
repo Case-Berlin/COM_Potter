@@ -32,7 +32,7 @@
             description="PATH"
             size="200" 
 			class="inputbox" 
-			default="images/potter/personen1x"
+			default="images//potter//personen1x"
 		/>
     </fieldset>
 </form>
