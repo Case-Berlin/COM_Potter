@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
     <fieldset name"years-data">
-        <field name="id" default="0" type="hidden"/>
+        <field 
+			name="id" 
+			default="0" 
+			type="hidden"
+		/>
  
-        <field name="Jahr" type="integer"
-               label="YEAR"
-               description="YEAR"
-               size="4" class="inputbox" default="2016"/>
-        <field name="Titel" type="text"
-               label="TITEL"
-               description="TITEL"
-               size="200" class="inputbox" default="Das Zauberschloss"/>
-        <field name="path" type="text"
-               label="PATH"
-               description="PATH"
-               size="200" class="inputbox" default="images/potter/personen1x"/>
+        <field 
+			name="Jahr" 
+			type="integer"
+            label="YEAR"
+            description="YEAR"
+            size="4" 
+			class="inputbox" 
+			default="2016"
+		/>
+        <field 
+			name="Titel" 
+			type="text"
+            label="TITEL"
+            description="TITEL"
+            size="200" 
+			class="inputbox" 
+			default="Das Zauberschloss ..."
+		/>
+        <field 
+			name="path" 
+			type="text"
+            label="PATH"
+            description="PATH"
+            size="200" 
+			class="inputbox" 
+			default="images/potter/personen1x"
+		/>
     </fieldset>
 </form>

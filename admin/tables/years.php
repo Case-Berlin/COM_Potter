@@ -7,17 +7,19 @@
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
 
+jimport('joomla.database.table');
+
 /**
  * Years Table class
  */
 class PotterTableYears extends JTable
 {
-	public $id;
+/*	public $id;
 	public $aktuell;
 	public $Jahr;
 	public $Titel;
 	public $path;
-
+*/
 	function __construct(&$db) 
 	{
 		parent::__construct('#__po_jahr', 'id', $db);
