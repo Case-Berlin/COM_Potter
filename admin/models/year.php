@@ -53,7 +53,7 @@ class PotterModelYear extends JModelAdmin
 	 * Method to delete record(s)
 	 * @return	boolean	True on success
 	 */
-	public function remove($ids, $logger)
+	public function remove($ids)
 	{
 		$db = JFactory::getDBO();
 		$query = $db->getQuery(true);
@@ -64,6 +64,47 @@ class PotterModelYear extends JModelAdmin
 		$query->where($conditions);
 		$db->setQuery($query);
 		$db->query();
+		return $db->getErrorMsg(false);
 	}
+	/**
+	 * Method to activ record
+	 *
+	 * @access	public
+	 * @return	boolean	True on success
+	 */
+	public function activ($ids)
+	{
+		$db = JFactory::getDBO();
+		$query = $db->getQuery(true);
+		$err = true;
+		if ((count($ids)==0) or (count($ids)>1))
+		{ // es darf natürlich nur ein Jahr aktiviert sein
+		   $err = false;
+		} else
+		{
+		  	// löschen des alten aktiven Jahres
+			$fields = array($db->quoteName('aktuell') . ' = ' . $db->quote('0'));
+			$conditions = array($db->quoteName('aktuell') . ' = 1');
+			$query->update($db->quoteName('#__po_jahr'))->set($fields)->where($conditions);
+			$db->setQuery($query);
+ 			$result = $db->query();
+			if ($db->getErrorNum>0)
+			{ 
+				$err = false;
+			}
+			// setzen des neuen aktive Jahres
+			$fields = array($db->quoteName('aktuell') . ' = ' . $db->quote('1'));
+			$conditions = array($db->quoteName('id').' IN ('.implode(", ", $ids).')');
+			$query->update($db->quoteName('#__po_jahr'))->set($fields)->where($conditions);
+			$db->setQuery($query);
+ 			$result = $db->query();
+			if ($db->getErrorNum>0)
+			{ 
+				$err = false;
+             //$this->setError( $row->getErrorMsg() )
+			}
+		}
+		return $err;
+	} //Ende function activ
 	
 }

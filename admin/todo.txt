@@ -1,3 +1,7 @@
+Abgekündigt?
+getErrorMsg
+db->query
+
 J3.x Anpassungen
 - JFolder, JFile?? Import!?
 

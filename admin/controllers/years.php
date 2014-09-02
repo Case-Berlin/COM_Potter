@@ -20,18 +20,20 @@ class PotterControllerYears extends JControllerAdmin
 
 	function delete()
 	{
-		$logger = getLogger();
 		$input =  JFactory::getApplication()->input;
 		$ids = $input->post->get('cid', array(), 'array');
 		JArrayHelper::toInteger($ids);
 		$model = $this->getModel('year');
-		$msg = $model->remove($ids, $logger);
+		$msg = $model->remove($ids);
 		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg ,'notice');
 	}
 	function activYear()
 	{
+		$input =  JFactory::getApplication()->input;
+		$ids = $input->post->get('cid', array(), 'array');
+		JArrayHelper::toInteger($ids);
 		$model = $this->getModel('year');
-		if(!$model->activ()) 
+		if(!$model->activ($ids)) 
 		{
 			$msg = JText::_( 'erroractivatedyear' );
 		} else 
