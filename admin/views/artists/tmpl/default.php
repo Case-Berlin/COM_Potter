@@ -1,5 +1,8 @@
-<?php defined('_JEXEC') or die; ?>
-<form action="<?php echo $this->request_url; ?>" method="post" name="adminForm" id="adminForm">
+<?php defined('_JEXEC') or die; 
+JHtml::_('bootstrap.tooltip');
+JHtml::_('behavior.multiselect');
+?>
+<form method="post" name="adminForm" id="adminForm">
 <div id="editcell">
 	<table>
 		<tr>
@@ -120,12 +123,12 @@
 	</table>
 </div>
 
+<input type="hidden" name="task" value="unblock" />
+<?php echo JHtml::_('form.token'); ?>
+<input type="hidden" name="boxchecked" value="0" />
+
 <input type="hidden" name="option" value="com_potter" />
 <input type="hidden" name="context" value="com_potter" />
-<input type="hidden" name="task" value="" />
-<input type="hidden" name="boxchecked" value="0" />
-<input type="hidden" name="controller" value="artists" />
 <input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />
 <input type="hidden" name="filter_order_Dir" value="" />
 </form>
-

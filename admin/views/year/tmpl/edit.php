@@ -10,9 +10,7 @@ JHtml::_('behavior.keepalive');
  
 // Der Link für das Formular
 //$actionLink = JRoute::_('index.php?option=com_potter&view=year&layout=edit&id=' . (int) $this->item->id);
-$actionLink = JRoute::_('index.php?option=com_potter&layout=year.edit&id=' . (int) $this->item->id);
-
-//<form action="<?php echo $actionLink; ?>" method="post" name="adminForm" id="item-form">
+//$actionLink = JRoute::_('index.php?option=com_potter&layout=year.edit&id=' . (int) $this->item->id);
  
 ?>
 <form method="post" name="adminForm" id="adminForm">

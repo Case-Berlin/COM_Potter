@@ -2,14 +2,14 @@
 /**
  * Charakter Tabelle für die Komponente Potter
  * Beschreibung der Tabelle: #__po_lehrer
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
+
+jimport('joomla.database.table');
 
 /**
 -- 
@@ -36,9 +36,9 @@ CREATE TABLE IF NOT EXISTS `jos_po_lehrer` (
 /**
  * Charakter Table class
  */
-class PotterTableLesson extends JTable
+class PotterTableLessons extends JTable
 {
-	var $id = null;			// @var int primäry Key
+/*	var $id = null;			// @var int primäry Key
 	var $id_fach = 0;		// @var int Key zur #__po_faecher
 	var $id_jahr = 0;		// @var int Key zur #__po_jahre
 	var $published = 0; 	// @var int 1 = auf Frontend anzeigen 0 = nicht anzeigen
@@ -51,13 +51,14 @@ class PotterTableLesson extends JTable
 	var $hits = 0;			// @var int Soll ein automatischer Clickzähler sein?
 	var $checked_out = 0;	// @var int wer hat das letzte mal den Datensatz geschrieben
 	var $checked_out_time = null; // @var datetime und wer war es
+*/
 	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
 	 */
 
-	function __construct(& $db) 
+	function __construct(&$db) 
 	{
 		parent::__construct('#__po_lehrer', 'id', $db);
 	}

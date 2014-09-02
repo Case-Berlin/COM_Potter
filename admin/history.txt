@@ -4,7 +4,20 @@
  * @author		Steffen Janke 
  * @license		GNU/GPL
  */
-02.09.2014 v.2.99.51 - 2.99.52
+02.09.2014 v.2.99.54 - 
+- da Years nun geht, weiter mit dem Rest
+- Anpassung admin/controller (nicht schön, aber selten und geht hoffentlich erstmal)
+- alle tables: 
+  + jimport('joomla.database.table');
+  - Beschreibung der Felder raus kommentiert
+  ! Klassen Namen geändert (s)
+- views der Listen (artists)
+  + jimport('joomla.utilities.utility');
+  + vor display: protected $items; 	 protected $pagination; protected $state;
+  + Toolbar eingefügt
+- default erstmal in einer datei, test
+  
+02.09.2014 v.2.99.51 - 2.99.53
 - ok, löschen und aktiv setzen noch in model.year, dann sollte es klappen
 - .52 - activ schalten eines Jahres
 - .53 bugfix nun sollte es gehen

@@ -2,14 +2,14 @@
 /**
  * Artist Tabelle für die Komponente Potter
  * Beschreibung der Tabelle: #__po_darst
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
+
+jimport('joomla.database.table');
 
 /**
 -- 
@@ -49,39 +49,39 @@ CREATE TABLE IF NOT EXISTS `#__po_darst` (
 /**
  * Year Table class
  */
-class PotterTableArtist extends JTable
+class PotterTableArtists extends JTable
 {
-	var $id = null;			// @var int primäry Key
-    var $joomlaid = 0;		// @var int id zur jos_users
-	var $powieid = 0;		// @var int id zur alten Powie Tabelle, wird nicht gepflegt
-	var $published = 1; 	// @var int 1 = aktiver Darsteller 0 = ehemaliger Darsteller
-	var $anzeigen = 0;		// @var int 1 = persönliches Profil auf der Seite anzeigen 
-	var $sex = 0;			// @var int 0 = weiblich, 1 = männlich
-	var $realname = null;	// @var varchar Nachname
-	var $realvname = null;	// @var varchar Vorname 
-	var $www = null;		// @var varchar Webadresse
-	var $email = null;		// @var varchar E-Mailadresse
-	var $showmail = 1;		// @var char 1 = E-Mailadresse intern anzeigen (nach außen geht nichts)
-	var $birthday = null;	// @var date Geburtstag
-	var $Telefon = null;    // @var varchar Telefon
-	var $PLZ = null;		// @var varchar PLZ
-	var $Ort = null;		// @var varchar Ort
-	var $Strasse = null;	// @var varchar Straße
-	var $Bild = null;		// @var varchar Name des Bildes (Pfad zum Bild ist fix /images/potter/personen
-	var $Comment = null;	// @var longtext Kommentar zu sich selbst
-	var $intComment = null;	// @var longtext internet Kommentar (nur für den Admin)
-	var $fezma = 0;			// @var int 0 = kein FEZ Mitarbeiter, 1 = FEZ Mitarbeiter
-	var $hits = 0;			// @var int Soll ein automatischer Clickzähler sein?
-	var $checked_out = 0;	// @var int wer hat das letzte mal den Datensatz geschrieben
-	var $checked_out_time = null; // @var datetime und wer war es
-
+/*	public $id;				// @var int primäry Key
+    public $joomlaid;		// @var int id zur jos_users
+	public $powieid = 0;	// @var int id zur alten Powie Tabelle, wird nicht gepflegt
+	public $published = 1; 	// @var int 1 = aktiver Darsteller 0 = ehemaliger Darsteller
+	public $anzeigen = 0;	// @var int 1 = persönliches Profil auf der Seite anzeigen 
+	public $sex = 0;		// @var int 0 = weiblich, 1 = männlich
+	public $realname;		// @var varchar Nachname
+	public $realvname;		// @var varchar Vorname 
+	public $www;			// @var varchar Webadresse
+	public $email;			// @var varchar E-Mailadresse
+	public $showmail;		// @var char 1 = E-Mailadresse intern anzeigen (nach außen geht nichts)
+	public $birthday;		// @var date Geburtstag
+	public $Telefon; 		// @var varchar Telefon
+	public $PLZ;			// @var varchar PLZ
+	public $Ort;			// @var varchar Ort
+	public $Strasse;		// @var varchar Straße
+	public $Bild;			// @var varchar Name des Bildes (Pfad zum Bild ist fix /images/potter/personen
+	public $Comment;		// @var longtext Kommentar zu sich selbst
+	public $intComment;		// @var longtext internet Kommentar (nur für den Admin)
+	public $fezma;			// @var int 0 = kein FEZ Mitarbeiter, 1 = FEZ Mitarbeiter
+	public $hits;			// @var int Soll ein automatischer Clickzähler sein?
+	public $checked_out;	// @var int wer hat das letzte mal den Datensatz geschrieben
+	public $checked_out_time; // @var datetime und wer war es
+*/
 	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
 	 */
 
-	function __construct(& $db) 
+	function __construct(&$db) 
 	{
 		parent::__construct('#__po_darst', 'id', $db);
 	}

@@ -2,14 +2,14 @@
 /**
  * Subject Tabelle für die Komponente Potter
  * Beschreibung der Tabelle: #__po_faecher
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
+
+jimport('joomla.database.table');
 
 /**
  * Subject Table class
@@ -22,27 +22,27 @@ CREATE TABLE `jos_po_faecher` (
 
  */
  
-class PotterTableSubject extends JTable
+class PotterTableSubjects extends JTable
 {
 	/**
 	 * Primary Key
 	 *
 	 * @var int
 	 */
-	var $id = null;		// @var int primary Key
+/*	var $id = null;		// @var int primary Key
 	var $published = 1; 	// @var int 1 = aktiver Darsteller 0 = ehemaliger Darsteller
 	var $Fach = null; 	// varchar(59) Fachname
 	var $hits = 0;			// @var int Soll ein automatischer Clickzähler sein?
 	var $checked_out = 0;	// @var int wer hat das letzte mal den Datensatz geschrieben
 	var $checked_out_time = null; // @var datetime und wer war es
-
+*/
 	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
 	 */
 
-	function __construct(& $db) 
+	function __construct(&$db) 
 	{
 		parent::__construct('#__po_faecher', 'id', $db);
 	}

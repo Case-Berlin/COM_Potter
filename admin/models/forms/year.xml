@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-    <fieldset>
+    <fieldset name="Jahr">
         <field 
 			name="id" 
 			default="0" 
@@ -21,7 +21,8 @@
 			type="text"
             label="TITEL"
             description="TITEL"
-            size="200" 
+            size="400" 
+            maxlength="200" 
 			class="inputbox" 
 			default="Das Zauberschloss ..."
 		/>
@@ -30,9 +31,10 @@
 			type="text"
             label="PATH"
             description="PATH"
-            size="200" 
+            size="400" 
+            maxlength="200" 
 			class="inputbox" 
-			default="images//potter//personen1x"
+			default="images/potter/personen1x"
 		/>
     </fieldset>
 </form>

@@ -2,8 +2,8 @@
 /**
  * Years View für die Komponente Potter
  * Diese erzeugt die Sicht auf die Liste #__po_jahr
- * @package    Potter Komponente
- * @subpackage Komponente
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff

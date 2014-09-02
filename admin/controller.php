@@ -91,23 +91,60 @@ class PotterController extends JControllerLegacy
 
 	public function display($cachable = false, $urlparams = false)
 	{
-		//JRequest::setVar('view', JRequest::getCmd('view', 'Potter'));
-		/*$input	= JFactory::getApplication()->input;
-		$view	= $input->get('view',$this->default_view);
-		$layout	= $input->get('layout','default');
-		$id		= $input->getInt('id');*/
 		$view	= $this->input->get('view',$this->default_view);
 		$layout	= $this->input->get('layout','default');
 		$id		= $this->input->getInt('id');
-		if ($view == 'year' && $layout == 'edit')
+		if ($layout == 'edit')
 		{
-			if (!$this->checkEditId('com_potter.edit.year', $id) )
-			{
-				$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false));
-				return false;
-			}
+		  if ($view == 'year' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.year', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false));
+				  return false;
+			  }
+		  }
+		  if ($view == 'artist' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.artist', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=artists',false));
+				  return false;
+			  }
+		  }
+		  if ($view == 'charakter' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.charakter', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=charakters',false));
+				  return false;
+			  }
+		  }
+		  if ($view == 'lesson' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.lesson', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=lessons',false));
+				  return false;
+			  }
+		  }
+		  if ($view == 'roll' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.roll', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=rolls',false));
+				  return false;
+			  }
+		  }
+		  if ($view == 'subject' )
+		  {
+			  if (!$this->checkEditId('com_potter.edit.subject', $id) )
+			  {
+				  $this->setRedirect(JRoute::_('index.php?option=com_potter&view=subjects',false));
+				  return false;
+			  }
+		  }
 		}
-//		parent::display($cachable, $urlparams);
 		parent::display();
 		
 		return $this;

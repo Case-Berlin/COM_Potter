@@ -1,5 +1,7 @@
 <?php
 /**
+ * Jahr Tabelle für die Komponente Potter
+ * Beschreibung der Tabelle: #__po_jahr
  * @package    COM_POTTER, Site-Controller 3.00.00
  * @subpackage Components
  */

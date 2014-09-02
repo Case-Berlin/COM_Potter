@@ -2,14 +2,14 @@
 /**
  * Artist Tabelle für die Komponente Potter
  * Beschreibung der Tabelle: #__po_namen
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
+
+jimport('joomla.database.table');
 
 /**
 -- 
@@ -34,9 +34,9 @@ CREATE TABLE `jos_po_namen` (
 /**
  * Roll Table class
  */
-class PotterTableRoll extends JTable
+class PotterTableRolls extends JTable
 {
-	var $id = null;			// @var int primäry Key
+/*	var $id = null;			// @var int primäry Key
 	var $published = 1; 	// @var int 1 = aktive Rolle 0 = ehemalige Rolle
 	var $Magie = 0;			// @var int 0 - neutral; 1 - weiß (bekannt); 2 - schwarz (bekannt); 3 - weiß (unbekannt); 4 - schwarz (unbekannt)
 	var $ma_name = null;	// @var varchar Nachname
@@ -44,13 +44,14 @@ class PotterTableRoll extends JTable
 	var $ma_titel = null;	// @var varchar Titel
 	var $haus = null;		// @var int 0 - unbekannt; 1 - Gryffindor; 2 - Ravenclaw; 3 - Hufflepuff; 4 - Slytherin; 5 - Bossander
 	var $sex = 0;			// @var int 0 = weiblich, 1 = männlich, 2 - beides
+*/
 	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
 	 */
 
-	function __construct(& $db) 
+	function __construct(&$db) 
 	{
 		parent::__construct('#__po_namen', 'id', $db);
 	}
