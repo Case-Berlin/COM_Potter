@@ -48,4 +48,22 @@ class PotterModelYear extends JModelAdmin
         }
          return $data;
     }
+	
+	/**
+	 * Method to delete record(s)
+	 * @return	boolean	True on success
+	 */
+	public function delete($ids, $logger)
+	{
+		$db = JFactory::getDBO();
+		$query = $db->getQuery(true);
+		$conditions = array(
+			$db->quoteName('id').' IN ('.implode(", ", $ids).')'
+		);
+		$query->delete($db->quoteName('#__po_jahr'));
+		$query->where($conditions);
+		$db->setQuery($query);
+		$db->query();
+	}
+	
 }

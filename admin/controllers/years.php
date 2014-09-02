@@ -24,13 +24,13 @@ class PotterControllerYears extends JControllerAdmin
 		$input =  JFactory::getApplication()->input;
 		$ids = $input->post->get('cid', array(), 'array');
 		JArrayHelper::toInteger($ids);
-		$model = $this->getModel('years');
+		$model = $this->getModel('year');
 		$msg = $model->remove($ids, $logger);
 		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg ,'notice');
 	}
 	function activYear()
 	{
-		$model = $this->getModel('years');
+		$model = $this->getModel('year');
 		if(!$model->activ()) 
 		{
 			$msg = JText::_( 'erroractivatedyear' );
@@ -38,7 +38,7 @@ class PotterControllerYears extends JControllerAdmin
 		{
 			$msg = JText::_( 'yearactivated' );
 		}
-		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg );
+		$this->setRedirect(JRoute::_('index.php?option=com_potter&view=years',false), $msg ,'notice' );
 	}
 
 }
