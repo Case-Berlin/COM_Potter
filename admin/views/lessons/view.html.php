@@ -2,52 +2,32 @@
 /**
  * Lessons View für die Komponente Potter
  * Diese erzeugt die Sicht auf die Liste #__po_lehrer
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
 
 jimport( 'joomla.application.component.view' );
+jimport('joomla.utilities.utility');
 
 /**
  * Charakters View
  */
 class PotterViewLessons extends JViewLegacy
 {
-	/**
-	 * alle Rollen anzeigen
-	 * @return void
-	 **/
+	 protected $items;
+	 protected $pagination;
+	 protected $state;
 	function display($tpl = null)
 	{
-//		global $context;
 		$context = JRequest::getCMD('context');
 		$mainframe = JFactory::getApplication();
 		
 		$db			=& JFactory::getDBO();
 		$uri		=& JFactory::getURI();
 		$document	= & JFactory::getDocument();
-
-		/**
-		* Writes a custom option and task button for the button bar
-		* @param string The task to perform (picked up by the switch($task) blocks
-		* @param string The image to display
-		* @param string The image to display when moused over
-		* @param string The alt text for the icon image
-		* @param boolean True if required to check that a standard list item is checked
-		* @param boolean True if required to include callinh hideMainMenu() 
-		JToolBarHelper::custom( 'task', 'icon', 'icon over', 'alt', boolean, boolean );		
-		*/
-		JToolBarHelper::title(   JText::_( 'Charaktere-des-Potter-Events' ), 'generic.png' );
-		JToolBarHelper::custom('CopyLesson','forward.png','forward.png','copylesson',true,false);
-		JToolBarHelper::publishList();
-		JToolBarHelper::unpublishList();
-		JToolBarHelper::editListX();
-		JToolBarHelper::addNewX();
 
 		// prepare list array
 		$lists = array();
@@ -90,6 +70,22 @@ class PotterViewLessons extends JViewLegacy
         //print_r($items);
 		$this->assignRef('rolls',		$rolls);
 		$this->assignRef('pagination', $pagination);
+
+
+        // Die Toolbar hinzufügen
+        $this->addToolBar();
+		
 		parent::display($tpl);
 	}
+
+	protected function addToolBar()
+    {
+		JToolBarHelper::title(JText::_( 'Charaktere-des-Potter-Events' ), 'generic.png' );
+ 
+		JToolBarHelper::custom('CopyLesson','forward.png','forward.png','copylesson',true,false);
+		JToolBarHelper::publish('lessons.publish','JTOOLBAR_PUBLISH', true);
+		JToolBarHelper::unpublish('lessons.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolBarHelper::editList('lesson.edit', 'JTOOLBAR_EDIT');
+		JToolBarHelper::addNew('lesson.add', 'JTOOLBAR_NEW');
+    }
 }

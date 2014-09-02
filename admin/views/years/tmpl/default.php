@@ -5,7 +5,6 @@ JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.multiselect');
 
 ?>
-<!--<form action="<?php echo JRoute::_('index.php?option=com_potter&view=years'); ?>" method="post" name="adminForm" id="adminForm">-->
 <form method="post" name="adminForm" id="adminForm">
 <div id="editcell">
 	<input type="hidden" name="task" value="unblock" />
@@ -18,4 +17,3 @@ JHtml::_('behavior.multiselect');
 	</table>
 </div>
 </form>
-

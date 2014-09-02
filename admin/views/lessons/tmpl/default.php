@@ -1,8 +1,13 @@
-<?php defined('_JEXEC') or die; ?>
+<?php 
+defined('_JEXEC') or die; 
+// Das Tooltip Behavior wird geladen
+JHtml::_('bootstrap.tooltip');
+JHtml::_('behavior.multiselect');
+?>
 <?php
 	//echo print_r($this->Funktion[0]->text);echo "*";
 ?>	
-<form action="<?php echo $this->request_url; ?>" method="post" name="adminForm" id="adminForm">
+<form method="post" name="adminForm" id="adminForm">
 <div id="editcell">
 	<table>
 		<tr>
@@ -117,12 +122,12 @@
 	</tbody>
 	</table>
 </div>
+<input type="hidden" name="task" value="unblock" />
+<?php echo JHtml::_('form.token'); ?>
+<input type="hidden" name="boxchecked" value="0" />
 
 <input type="hidden" name="option" value="com_potter" />
 <input type="hidden" name="context" value="com_potter" />
-<input type="hidden" name="task" value="" />
-<input type="hidden" name="boxchecked" value="0" />
-<input type="hidden" name="controller" value="lessons" />
 <input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />
 <input type="hidden" name="filter_order_Dir" value="" />
 </form>

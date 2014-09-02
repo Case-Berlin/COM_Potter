@@ -4,7 +4,10 @@
  * @author		Steffen Janke 
  * @license		GNU/GPL
  */
-02.09.2014 v.2.99.54 - 
+02.09.2014 v.2.99.55
+- diese Anpassungen nun auf die anderen List Views, damit man endlich was sieht, danach kann man dann hübsch machen
+
+02.09.2014 v.2.99.54
 - da Years nun geht, weiter mit dem Rest
 - Anpassung admin/controller (nicht schön, aber selten und geht hoffentlich erstmal)
 - alle tables: 
@@ -16,6 +19,7 @@
   + vor display: protected $items; 	 protected $pagination; protected $state;
   + Toolbar eingefügt
 - default erstmal in einer datei, test
+- Test: Liste geht, aber hässlich, publish und unpublish geht nicht, sortieren geht, Filter nicht, suchen ja
   
 02.09.2014 v.2.99.51 - 2.99.53
 - ok, löschen und aktiv setzen noch in model.year, dann sollte es klappen

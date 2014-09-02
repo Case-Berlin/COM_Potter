@@ -2,41 +2,28 @@
 /**
  * Lessons View für die Komponente Potter
  * Diese erzeugt die Sicht auf die Liste #__po_faecher
- * @package    Potter Komponente
- * @subpackage Komponente
- * @link http://www.derphoenixorden.de
- * @license		GNU/GPL
+ * @package    COM_POTTER, Site-Controller 3.00.00
+ * @subpackage Components
  */
 
 // kein direkte Zugriff
 defined( '_JEXEC' ) or die;
 
 jimport( 'joomla.application.component.view' );
+jimport('joomla.utilities.utility');
 
-/**
- * Years View
- */
 class PotterViewSubjects extends JViewLegacy
 {
-	/**
-	 * alle Jahre anzeigen
-	 * @return void
-	 **/
+	 protected $items;
+	 protected $pagination;
+	 protected $state;
 	function display($tpl = null)
 	{
-		//global $context;
-		//global $mainframe;
 		$mainframe = JFactory::getApplication();
 		$context = JRequest::getCMD('context');
 		$db			=& JFactory::getDBO();
 		$uri		=& JFactory::getURI();
 		$document	= & JFactory::getDocument();
-
-		JToolBarHelper::title(   JText::_( 'Potter-Event-Faecher' ), 'generic.png' );
-		JToolBarHelper::publishList();
-		JToolBarHelper::unpublishList();
-		JToolBarHelper::editListX();
-		JToolBarHelper::addNewX();
 
 		// Get data from the model
 		$items		= & $this->get( 'Data');
@@ -65,6 +52,20 @@ class PotterViewSubjects extends JViewLegacy
 
 		$this->assignRef('items',		$items);
 		$this->assignRef('pagination', $pagination);
+		
+        // Die Toolbar hinzufügen
+        $this->addToolBar();
+
 		parent::display($tpl);
 	}
+
+	protected function addToolBar()
+    {
+		JToolBarHelper::title(JText::_( 'Potter-Event-Faecher' ), 'generic.png' );
+ 
+		JToolBarHelper::publish('subjects.publish','JTOOLBAR_PUBLISH', true);
+		JToolBarHelper::unpublish('subjects.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolBarHelper::editList('subject.edit', 'JTOOLBAR_EDIT');
+		JToolBarHelper::addNew('subject.add', 'JTOOLBAR_NEW');
+    }
 }
