@@ -75,7 +75,6 @@ class PotterModelYear extends JModelAdmin
 	public function activ($ids)
 	{
 		$db = JFactory::getDBO();
-		$query = $db->getQuery(true);
 		$err = true;
 		if ((count($ids)==0) or (count($ids)>1))
 		{ // es darf natürlich nur ein Jahr aktiviert sein
@@ -83,6 +82,7 @@ class PotterModelYear extends JModelAdmin
 		} else
 		{
 		  	// löschen des alten aktiven Jahres
+			$query = $db->getQuery(true);
 			$fields = array($db->quoteName('aktuell') . ' = ' . $db->quote('0'));
 			$conditions = array($db->quoteName('aktuell') . ' = 1');
 			$query->update($db->quoteName('#__po_jahr'))->set($fields)->where($conditions);
@@ -93,8 +93,9 @@ class PotterModelYear extends JModelAdmin
 				$err = false;
 			}
 			// setzen des neuen aktive Jahres
-			$fields = array($db->quoteName('aktuell') . ' = ' . $db->quote('1'));
-			$conditions = array($db->quoteName('id').' IN ('.implode(", ", $ids).')');
+			$query = $db->getQuery(true);
+			$fields = array($db->quoteName('aktuell').' = '.$db->quote('1'));
+			$conditions = array($db->quoteName('id').' = '.$db->quote($ids[0]));
 			$query->update($db->quoteName('#__po_jahr'))->set($fields)->where($conditions);
 			$db->setQuery($query);
  			$result = $db->query();

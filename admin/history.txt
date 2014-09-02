@@ -7,6 +7,7 @@
 02.09.2014 v.2.99.51 - 2.99.52
 - ok, löschen und aktiv setzen noch in model.year, dann sollte es klappen
 - .52 - activ schalten eines Jahres
+- .53 bugfix nun sollte es gehen
 
 01.09.2014 v.2.99.40 - 2.99.50
 - GitHub wieder in Betrieb genommen, nun gehts auch
